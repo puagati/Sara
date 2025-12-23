@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Te quiero</title>
+  <meta name="description" content="Página con imagen de fondo y mensaje personalizado." />
+  <style>
+    :root {
+      --overlay: rgba(0,0,0,.45); /* oscurece un poco la foto para que se lea el texto */
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: #ffffff;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 24px;
+      transition: background-image 0.6s ease-in-out;
+    }
+
+    h1 {
+      font-size: clamp(48px, 10vw, 120px);
+      font-weight: 800;
+      margin: 0;
+      text-shadow: 0 3px 10px rgba(0,0,0,.5);
+    }
+
+    .tel {
+      font-size: 1.4rem;
+      margin-top: 1rem;
+      font-weight: 500;
+      text-shadow: 0 2px 8px rgba(0,0,0,.4);
+    }
+
+    .texto-largo {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      max-width: 700px;
+      line-height: 1.6;
+      text-shadow: 0 2px 8px rgba(0,0,0,.4);
+    }
+  </style>
+</head>
+<body>
+  <section class="hero" id="hero" role="img" aria-label="Fondo con imagen personalizada">
+    <h1>TE QUIERO</h1>
+    <p class="tel">SARA</p>
+    <p class="texto-largo">
+      
+    </p>
+  </section>
+
+  <script>
+    // Lista de imágenes dentro de la carpeta adri/imagenes/
+    const imagenes = [
+      'adri/imagenes/IMG_4372.JPG',
+
+    ];
+
+    // Elige una imagen aleatoria
+    const aleatoria = imagenes[Math.floor(Math.random() * imagenes.length)];
+
+    // Aplica la imagen como fondo de la sección .hero
+    const hero = document.getElementById('hero');
+    hero.style.backgroundImage = `
+      linear-gradient(180deg, rgba(0,0,0,.5), rgba(0,0,0,.4)),
+      url('${aleatoria}')
+    `;
+  </script>
+</body>
+</html>
